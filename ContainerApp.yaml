@@ -1,0 +1,16 @@
+apiVersion: apps.tanzu.vmware.com/v1alpha1
+kind: ContainerApp
+spec:
+  build:
+    path: "."
+    buildpacks: {}
+
+  nonSecretEnv:
+    - name: IS_WORKER
+      value: "false"
+
+  replicas: 1
+
+  resources:
+    cpu: 500m
+    memory: 128Mi
